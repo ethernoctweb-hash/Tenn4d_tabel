@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070c11">
+  <title>TENN4D CASHDROP TERPILIH</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="page">
+    <section id="captureArea" aria-label="Tabel Cashdrop Terpilih">
+      <img class="banner" src="assets/img/cashdrop-header.png" alt="CASHDROP TERPILIH TENN4D">
+      <div class="table-frame">
+        <table id="cashdropTable">
+          <colgroup><col class="col-account"><col class="col-type"><col class="col-number"><col class="col-claim"><col class="col-status"></colgroup>
+          <thead><tr>
+            <th><span class="head-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12a4.2 4.2 0 1 0 0-8.4A4.2 4.2 0 0 0 12 12Zm-8 8.4v-2.1a6.8 6.8 0 0 1 6.8-6.8h2.4a6.8 6.8 0 0 1 6.8 6.8v2.1Z"/></svg></span><span>Account type</span></th>
+            <th><span class="head-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7Zm-10 9 10 5 10-5v4l-10 5-10-5Zm0 7 10 5 10-5v3l-10 5-10-5Z"/></svg></span><span>Type</span></th>
+            <th><span class="head-icon hash" aria-hidden="true">#</span><span>Nomor Terpilih</span></th>
+            <th><span class="head-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v5c0 4 16 4 16 0V5M4 10v5c0 4 16 4 16 0v-5M4 15v4c0 4 16 4 16 0v-4"/></svg></span><span>Jumlah Klaim</span></th>
+            <th><span class="head-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 21 5v6c0 5.6-3.8 9.1-9 11-5.2-1.9-9-5.4-9-11V5Zm0 4L7 7.7v3.4c0 3.5 2 5.8 5 7.2 3-1.4 5-3.7 5-7.2V7.7Z"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><span>Status</span></th>
+          </tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <button id="toggleEditor" class="btn btn-primary" type="button">⚙ EDIT / CUSTOM DATA</button>
+      <button id="downloadBtn" class="btn btn-download" type="button">⬇ DOWNLOAD TABEL</button>
+    </div>
+    <p id="notice" class="notice" role="status" aria-live="polite"></p>
+
+    <section id="editorPanel" class="editor-panel" hidden>
+      <div class="panel-heading"><h2>Editor Data Tabel</h2><span id="rowCount">7 baris</span></div>
+      <div class="row-picker">
+        <label for="rowSelect">Pilih baris</label>
+        <select id="rowSelect"></select>
+      </div>
+      <form id="editForm">
+        <div class="form-grid">
+          <label>Account type
+            <select id="accountInput" required><option>VIP</option><option>Member</option></select>
+          </label>
+          <label>Type
+            <input id="typeInput" type="text" placeholder="Contoh: 4D" required maxlength="12">
+          </label>
+          <label>Nomor Terpilih
+            <input id="numberInput" type="text" inputmode="numeric" placeholder="Contoh: 8247" required maxlength="30">
+          </label>
+          <label>Jumlah Klaim (Rupiah)
+            <input id="claimInput" type="number" min="0" step="1" placeholder="250000" required>
+          </label>
+          <label>Status
+            <select id="statusInput" required><option>Success</option><option>Menunggu</option></select>
+          </label>
+        </div>
+        <div class="editor-actions">
+          <button class="btn btn-primary" type="submit" id="saveBtn">Simpan Perubahan</button>
+          <button class="btn" type="button" id="addBtn">＋ Tambah Baris</button>
+          <button class="btn btn-danger" type="button" id="deleteBtn">Hapus Baris</button>
+          <button class="btn" type="button" id="cancelBtn">Batalkan</button>
+          <button class="btn" type="button" id="resetBtn">Reset Data Contoh</button>
+        </div>
+      </form>
+      <p class="hint">Perubahan disimpan di perangkat ini melalui localStorage. Header kolom dikunci dan tidak dapat diedit.</p>
+    </section>
+    <footer>© TEAM TARSIUS</footer>
+  </main>
+</body>
+</html>

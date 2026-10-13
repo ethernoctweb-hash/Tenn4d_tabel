@@ -1,0 +1,77 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark;--bg:#070c11;--gold:#f5c52d;--gold2:#ffd85a;--line:#344352;--text:#edf3fa}
+html{min-height:100%;background:var(--bg)}
+body{margin:0;background:radial-gradient(ellipse at center,#0b1520 0,#070c11 70%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+.page{width:min(100%,1500px);margin:0 auto;padding:clamp(8px,2.35vw,36px)}
+#captureArea{width:100%;min-width:0;background:#070c11;padding:0;border-radius:12px}
+.banner{display:block;width:100%;height:auto;min-height:0;aspect-ratio:1466/178;object-fit:fill;border:1px solid #cba329;border-radius:9px;margin-bottom:clamp(5px,1.1vw,16px)}
+.table-frame{width:100%;overflow:hidden;border:1px solid #e5b923;border-radius:9px;background:#071019}
+table{width:100%;min-width:0;table-layout:fixed;border-collapse:separate;border-spacing:0;font-size:clamp(8px,1.65vw,25px)}
+.col-account{width:21%}.col-type{width:18.5%}.col-number{width:21.5%}.col-claim{width:21%}.col-status{width:18%}
+thead th{height:clamp(38px,4.5vw,68px);padding:clamp(4px,.85vw,13px) clamp(2px,.65vw,10px);background:linear-gradient(180deg,#f1c342 0%,#bd8516 48%,#64420c 100%);color:#fff;font-weight:700;text-align:center;border-right:1px solid #e4b83c;vertical-align:middle}
+thead th:last-child{border-right:0}
+thead th span{vertical-align:middle}
+.head-icon{display:inline-flex;width:clamp(14px,2.15vw,32px);height:clamp(14px,2.15vw,32px);margin-right:clamp(2px,.5vw,8px);align-items:center;justify-content:center;vertical-align:middle;color:#fff;flex-shrink:0}
+.head-icon svg{width:100%;height:100%;fill:currentColor}
+.head-icon.hash{font-weight:900;font-size:1.45em;margin-right:clamp(1px,.3vw,5px)}
+thead th span:last-child{white-space:normal}
+tbody td{height:clamp(35px,4.4vw,67px);padding:clamp(4px,.7vw,11px) clamp(2px,.65vw,10px);text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#080f17;line-height:1.15;overflow-wrap:anywhere}
+tbody tr:nth-child(even) td{background:#0b1622}
+tbody tr:last-child td{border-bottom:0}
+tbody td:last-child{border-right:0}
+tbody td.claim{color:#ffd338;font-weight:700;white-space:nowrap}
+.account-cell{display:flex;align-items:center;justify-content:flex-start;gap:clamp(4px,.8vw,12px);padding-left:clamp(5px,2.2vw,34px);white-space:nowrap}
+.account-icon{width:clamp(16px,2.45vw,36px);height:clamp(16px,2.45vw,36px);flex:0 0 auto}
+.account-icon.vip{color:#ffd32d;fill:currentColor}
+.account-icon.member{color:#d8e5f2;fill:currentColor}
+.status-pill{display:inline-flex;align-items:center;justify-content:center;gap:clamp(3px,.5vw,8px);max-width:100%;padding:clamp(4px,.62vw,9px) clamp(5px,.8vw,12px);border-radius:999px;font-size:clamp(9px,1.48vw,22px);font-weight:700;white-space:nowrap}
+.status-pill.success{background:#00a963;color:white}
+.status-pill.waiting{background:#ffc51b;color:#111}
+.status-icon{width:1.12em;height:1.12em;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:1em;line-height:1;flex-shrink:0}
+.success .status-icon{background:#e2fff0;color:#00975a}
+.waiting .status-icon{border:2px solid #171717;color:#171717}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px 0 8px}
+.btn{border:1px solid #7b8b9a;border-radius:8px;background:#182431;color:#f7f9fb;padding:11px 15px;font-size:14px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.btn:active{transform:translateY(1px);filter:brightness(1.15)}
+.btn-primary{background:linear-gradient(#dcae27,#8f620e);border-color:#f2ca48;color:#fff}
+.btn-download{background:linear-gradient(#00b86d,#00894e);border-color:#25d88e}
+.btn-danger{background:#67252b;border-color:#b84a53}
+.notice{min-height:18px;text-align:center;color:#b7e9cc;font-size:13px;margin:8px 0}
+.notice.error{color:#ff9e9e}
+.editor-panel{border:1px solid #46586a;border-radius:12px;background:#0c151f;padding:16px;margin-top:12px}
+.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #293b4d;padding-bottom:10px;margin-bottom:12px}
+.panel-heading h2{font-size:18px;margin:0;color:#ffd34d}
+#rowCount,.hint{color:#aab8c6;font-size:12px}
+.row-picker{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+label{display:block;font-size:13px;color:#dce5ee}
+input,select{width:100%;min-width:0;margin-top:6px;padding:10px;border:1px solid #46596b;border-radius:7px;background:#070e15;color:#fff;font:inherit}
+.row-picker select{width:auto;flex:1;max-width:260px;margin:0}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.editor-actions .btn{font-size:12px;padding:10px}
+.hint{line-height:1.5;margin-bottom:0}
+footer{text-align:center;color:#637283;font-size:11px;padding:18px 0 4px}
+[hidden]{display:none!important}
+@media(max-width:520px){
+ .page{padding:7px 5px}
+ #captureArea{border-radius:6px}
+ .banner{border-radius:6px;margin-bottom:5px}
+ .table-frame{border-width:1px;border-radius:6px}
+ table{font-size:clamp(7px,2.05vw,10px)}
+ .col-account{width:22%}.col-type{width:12%}.col-number{width:20%}.col-claim{width:25%}.col-status{width:21%}
+ thead th{height:35px;padding:3px 1px;line-height:1.05;font-size:clamp(7px,1.95vw,10px);overflow-wrap:anywhere}
+ .head-icon{width:clamp(8px,2.5vw,12px);height:clamp(8px,2.5vw,12px);margin-right:1px}
+ .head-icon.hash{font-size:1.1em;margin-right:0}
+ thead th span:last-child{vertical-align:middle}
+ tbody td{height:34px;padding:3px 1px;line-height:1.05}
+ .account-cell{gap:2px;padding-left:2px}
+ .account-icon{width:clamp(9px,3vw,13px);height:clamp(9px,3vw,13px)}
+ .status-pill{gap:2px;padding:3px 3px;font-size:clamp(7px,1.85vw,9px);letter-spacing:-.15px}
+ .status-icon{font-size:.85em}
+ .toolbar{gap:6px;margin:10px 0 3px}
+ .btn{padding:9px 9px;font-size:11px}
+ .editor-panel{padding:10px}
+ .form-grid{grid-template-columns:1fr;gap:10px}
+}
+@media(orientation:landscape) and (max-height:500px){.page{max-width:1200px;padding:8px 18px}.toolbar{margin:9px 0}.banner{margin-bottom:7px}}
+@media print{.toolbar,.notice,.editor-panel,footer{display:none!important}body{background:#070c11}}
